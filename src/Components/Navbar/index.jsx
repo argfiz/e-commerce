@@ -8,7 +8,7 @@ const Navbar = () => {
     const activeStyle = 'underline underline-offset-4'
     
     let navLeft = [
-        {to: '/', text: 'Shopi', className: 'font-bold text-xl', active: false},
+        {to: '/', text: 'e-Box', className: 'text-white font-bold text-xl', active: false},
         { to: '/', text: 'All', className: 'text-white font-semibold text-md', active: true},
         { to: '/clothes', text: 'Clothes', className: 'text-white font-semibold text-md', active: true},
         { to: '/electronics', text: 'Electronics', className: 'text-white font-semibold text-md', active: true},
@@ -56,7 +56,7 @@ const Navbar = () => {
     )
 
     return (
-        <nav className='flex justify-between items-center fixed z-10 top-0 w-full py-5 px-40 text-sm font-light flex-wrap bg-blue-300'>
+        <nav className='flex justify-between items-center fixed z-10 top-0 w-full py-5 px-20 text-sm font-light flex-wrap bg-black/80'>
             
             <ul className='flex gap-3 items-center flex-wrap '>
                 {navLeft.map(item => (

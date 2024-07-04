@@ -1,13 +1,10 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from 'react'
 import { getAllProducts } from '../../api'
-//import { Layout } from "../../Components/Layout"
 import { Card } from "../../Components/Card"
-import { ProductDetail } from "../../Components/ProductDetail"
-
 
 function Home() {
-
-  const [items, setItems] = useState(null)   
+  
+  const [items, setItems] = useState(null)  
 
   useEffect(() => {
     async function fetchData() {
@@ -33,7 +30,7 @@ function Home() {
           ))
         } 
       </section>
-      <ProductDetail />       
+             
     </>
   )
 }

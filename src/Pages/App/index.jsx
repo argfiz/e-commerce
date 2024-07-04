@@ -8,9 +8,9 @@ import NotFound from '../NotFound'
 import SignIn from '../SignIn'
 import { Navbar } from '../../Components/Navbar'
 import { Layout } from '../../Components/Layout'
+import { CheckoutSideMenu } from '../../Components/CheckoutSideMenu'
+import { ProductDetail } from '../../Components/ProductDetail'
 import './App.css'
-
-
 
 const AppRoutes = () => {
   let routes = useRoutes([
@@ -19,24 +19,23 @@ const AppRoutes = () => {
     { path: '/my-order', element: <MyOrder /> },
     { path: '/my-orders', element: <MyOrders /> },
     { path: '/sign-in', element: <SignIn /> },
-    { path: '/*', element: <NotFound /> }
-    
+    { path: '/*', element: <NotFound /> }  
   ])
   return routes
 }
-
-
-
+  
 function App() {
 
   return (
     <>
       <ShoppingCartProvider>
-      <BrowserRouter>
-          <Navbar />
-          <Layout>
-            <AppRoutes />
-          </Layout>   
+        <BrowserRouter>
+            <Navbar />
+              <Layout>
+                <AppRoutes />
+                <CheckoutSideMenu />
+                <ProductDetail />
+              </Layout>      
         </BrowserRouter> 
       </ShoppingCartProvider>
         
