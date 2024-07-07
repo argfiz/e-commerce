@@ -5,13 +5,12 @@ import  { ShoppingCartContext } from '../../Context'
 
 const Card = ({ data }) => {
 
-    const {count, 
+    const { 
         setCount,  
         toggleProductDetail, 
         setProductToShow,
         setCartProducts,
         cartProducts,
-        toggleCheckoutSideMenu,
         isProductDetailOpen,
         isCheckoutSideMenuOpen,
         setIsCheckoutSideMenuOpen,
@@ -28,12 +27,11 @@ const Card = ({ data }) => {
         isProductDetailOpen ? setIsProductDetail(true) : null;  
     }
     
-    //Shopping Cart Add product to cart
+    //Shopping Cart Add product to cart (ABSTRAER EN... CUSTOMHOOK? )
     const addProductToToCart = (event, productDetail) => {
         event.stopPropagation()
-        setCount(count + 1)
+        setCount(cartProducts.length +1)
         setCartProducts([...cartProducts, productDetail])
-        toggleCheckoutSideMenu()
         if(isProductDetailOpen){
             toggleProductDetail()
             setIsProductDetail(false)
@@ -49,6 +47,7 @@ const Card = ({ data }) => {
         if(isInCart){
             return (
                 <button 
+                    disabled    
                     className='absolute top-2 right-2 flex justify-center items-center bg-white w-9 h-9 rounded-full p-1'
                     onClick={(e) => {addProductToToCart(e, data)}}> 
                     <CheckCircleIcon className='size-9 text-blue-500'></CheckCircleIcon>
@@ -57,18 +56,18 @@ const Card = ({ data }) => {
         }else{
              return (
                 <button 
-                    className='absolute top-2 right-2 flex justify-center items-center bg-white w-9 h-9 rounded-full p-1'
+                    className='  absolute top-2 right-2 flex justify-center items-center bg-white w-9 h-9 rounded-full p-1'
                     onClick={(e) => {addProductToToCart(e, data)}}> 
-                    <PlusCircleIcon className='size-9 text-black'></PlusCircleIcon>
+                    <PlusCircleIcon className='size-9 text-black '></PlusCircleIcon>
                 </button>
             )     
         }      
-    }
+      }
    
     
     return(
         <article 
-            className='cursor-pointer w-[145px] h-60 rounded-lg'
+            className='cursor-pointer w-[170px] h-60 rounded-lg'
             onClick={() => showProduct(data)}> 
             <figure className='relative mb-2 w-full h-4/5'>
                 <figcaption className='absolute bottom-0 left-0 bg-white/90 rounded-lg text-black text-xs m-2 px-3 py-0.5'>
@@ -77,7 +76,7 @@ const Card = ({ data }) => {
                 <img className='w-full h-full object-contain' src={data?.image} alt={data?.title} />
                 {renderIcon(data.id)}  
             </figure>
-            <p className='flex justify-between items-center px-1 bg-blue-400 text-white h-10'>
+            <p className='flex justify-between items-center px-1 bg-blue-500 text-white h-10 rounded-sm'>
                 <span className='text-sm font-normal truncate'>{data?.title}</span>
                 <span className='text-lg font-medium'>${data?.price}</span>
             </p>

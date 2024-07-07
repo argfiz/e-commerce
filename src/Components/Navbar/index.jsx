@@ -1,4 +1,4 @@
-import { ShoppingBagIcon } from '@heroicons/react/24/solid'
+import { ShoppingBagIcon, HomeIcon } from '@heroicons/react/24/solid'
 import { NavLink } from 'react-router-dom'
 import { useContext } from 'react'
 import  { ShoppingCartContext } from '../../Context'
@@ -9,7 +9,7 @@ const Navbar = () => {
     
     let navLeft = [
         {to: '/', text: 'e-Box', className: 'text-white font-bold text-xl', active: false},
-        { to: '/', text: 'All', className: 'text-white font-semibold text-md', active: true},
+        { to: '/', text: <HomeIcon className='w-7 h-7 text-white'></HomeIcon>, className: 'text-white font-semibold text-md', active: true},
         { to: '/clothes', text: 'Clothes', className: 'text-white font-semibold text-md', active: true},
         { to: '/electronics', text: 'Electronics', className: 'text-white font-semibold text-md', active: true},
         { to: '/furnitures', text: 'Furnitures', className: 'text-white font-semibold text-md', active: true},
@@ -24,8 +24,22 @@ const Navbar = () => {
         { to: '', 
           text:(
             <div className='flex justify-between items-end w-[40px]' >
-                <ShoppingBagIcon className='w-6 h-6 text-white' /> 
-                <span>{`${context.count}`}</span>
+                <ShoppingBagIcon
+                    className='w-7 h-7 text-white cursor-pointer'
+                    onClick={() => {
+                        if(!context.isCheckoutSideMenuOpen) {
+                            context.setIsCheckoutSideMenuOpen(true) 
+                        }
+                        if(context.isCheckoutSideMenuOpen){
+                            context.setIsCheckoutSideMenuOpen(false)
+                        }
+                    
+                        if(context.isProductDetailOpen){
+                            context.setIsProductDetailOpen(false) 
+                        }
+                    }}> 
+                </ShoppingBagIcon> 
+                <span>{`${context.cartProducts.length}`}</span>
             </div>
           ),
           className: 'text-white font-semibold text-md', 
@@ -56,7 +70,7 @@ const Navbar = () => {
     )
 
     return (
-        <nav className='flex justify-between items-center fixed z-10 top-0 w-full py-5 px-20 text-sm font-light flex-wrap bg-black/80'>
+        <nav className='flex justify-between items-center fixed z-10 top-0 w-full py-2 px-20 text-sm font-light flex-wrap bg-black/80'>
             
             <ul className='flex gap-3 items-center flex-wrap '>
                 {navLeft.map(item => (

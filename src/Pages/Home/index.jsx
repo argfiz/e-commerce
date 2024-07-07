@@ -1,32 +1,35 @@
-import { useState, useEffect } from 'react'
-import { getAllProducts } from '../../api'
+
+import { useContext } from 'react'
+import { ShoppingCartContext } from '../../Context'
+
 import { Card } from "../../Components/Card"
 
 function Home() {
   
-  const [items, setItems] = useState(null)  
+   const{
+        items,
+        setSearchByTitle
+    } = useContext(ShoppingCartContext)
 
-  useEffect(() => {
-    async function fetchData() {
-      try{
-        const data = await getAllProducts()
-        setItems(data)
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      } 
-    } 
-    fetchData()
-  }, [])
-
+  
   return (
     <> 
-      <p>HOME</p>
-      <section className='grid gap-5 p-[35px] pr-[0px] grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 w-full max-w-screen-lg '>   
+
+      <div className='flex justify-column items-center'>
+        <h1 className='text-black p-2 font-bold text-lg  text-center'>Exclusive Products</h1>
+      </div>
+      <input 
+          type='text' 
+          placeholder='Search a Products'
+          className='border border-black rounded-lg w-[350px] p-4 mb-4 focus:outline-none'
+          onChange={(event) => setSearchByTitle(event.target.value) } />
+      <section className='grid gap-5 p-[15px] pr-[0px] mt-2 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 w-full max-w-screen-lg '>   
+     
         {
           items?.map(item => (
             <Card 
-            key={item.id} 
-            data={item}/>
+              key={item.id} 
+              data={item}/>
           ))
         } 
       </section>

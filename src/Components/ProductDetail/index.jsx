@@ -8,20 +8,21 @@ const ProductDetail = () => {
     const {
         isProductDetailOpen, 
         toggleProductDetail, 
-        productToShow
+        productToShow,
     } = useContext(ShoppingCartContext)    
 
     return (
         
-        <aside className={`${isProductDetailOpen ? 'flex' : 'hidden'} flex-col fixed right-0 w-[450px] h-[calc(100vh-68px)] border bg-white/80 pb-5`}>
-            <div className='flex justify-between items-center px-6 py-3'>
-                <h2 className='font-medium text-xl'>Product details</h2>
+        <aside 
+            className={`${isProductDetailOpen ? 'flex fixed left-0  flex-col  w-[375px] h-[calc(100vh-43px)] p-2 pt-0 border bg-white/80' : 'hidden'} `}>
+            <div className='flex justify-between items-center p-2'>
+                <h2 className='font-bold text-lg'>Product Details</h2>
                 <XMarkIcon 
                 className='size-8 text-red-600 cursor-pointer' 
                 onClick={() => toggleProductDetail()}></XMarkIcon>
             </div>
 
-            <div className='flex flex-col mx-6 overflow-y-scroll bg-white border border-blue-300 '>
+            <div className='flex flex-col overflow-y-scroll bg-white border border-blue-500 rounded-sm shadow-2xl '>
                 <figure className='mb-4'>
                     <img 
                         className='w-full h-[200px] pt-10 object-contain' 
@@ -34,9 +35,18 @@ const ProductDetail = () => {
                     <span className='font-light text-sm mb-1'>{productToShow.description}</span>
                 </p>
             </div>
-            <button className='flex justify-center items-center mt-2'>
-                <PlusCircleIcon className='size-12 text-black mt-3'></PlusCircleIcon>
-            </button>    
+
+            <div>
+                <button className='flex justify-center items-center w-full bg-black pb-3'>
+                    <PlusCircleIcon className='size-6 text-white mt-3'></PlusCircleIcon>
+                </button> 
+                <button 
+                    className='flex justify-center items-center w-full bg-white border border-blue-500 pb-3'
+                    onClick={() => toggleProductDetail()}>
+                    <span className='font-normal text-blue-500 pt-[10px]'>Seguir viendo</span>
+                </button>
+            </div>
+               
              
         </aside>
     )
