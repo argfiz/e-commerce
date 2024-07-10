@@ -14,15 +14,17 @@ const ProductDetail = () => {
     return (
         
         <aside 
-            className={`${isProductDetailOpen ? 'flex fixed left-0  flex-col  w-[375px] h-[calc(100vh-43px)] p-2 pt-0 border bg-white/80' : 'hidden'} `}>
-            <div className='flex justify-between items-center p-2'>
+            className={`${isProductDetailOpen ? 'flex  fixed left-0  flex-col  w-[375px] h-[calc(100vh-43px)] p-2 pt-0 border bg-white/80' : 'hidden'} `}>
+            <div className='flex relative justify-center items-center p-2'>
+                
                 <h2 className='font-bold text-lg'>Product Details</h2>
-                <XMarkIcon 
-                className='size-8 text-red-600 cursor-pointer' 
-                onClick={() => toggleProductDetail()}></XMarkIcon>
-            </div>
+                <div className=' flex absolute right-0'>
+                    <XMarkIcon 
+                     className='size-8 text-red-600 cursor-pointer' 
+                    onClick={() => toggleProductDetail()}></XMarkIcon></div>
+                 </div>  
 
-            <div className='flex flex-col overflow-y-scroll bg-white border border-blue-500 rounded-sm shadow-2xl '>
+            <div className='flex flex-col overflow-y-scroll bg-white border border-blue-500 rounded-sm shadow-2xl flex-1 '>
                 <figure className='mb-4'>
                     <img 
                         className='w-full h-[200px] pt-10 object-contain' 

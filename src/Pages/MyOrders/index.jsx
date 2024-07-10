@@ -9,8 +9,8 @@ function MyOrders() {
 
     return (
       <>
-    <div className='flex flex-col p-2 pt-0 w-[375px] h-[calc(100vh-44px)] bg-blue-500'>
-
+    <div className='flex flex-col p-2 pt-0 w-96 h-[calc(100vh-44px)] bg-blue-500'>
+      
       <div className='flex justify-start items-center'>
         <h1 className='text-white p-2 font-bold text-lg  text-center'>My Orders:</h1>
         <span className='text-white font-bold text-lg'>{order.length}</span> 
@@ -26,7 +26,8 @@ function MyOrders() {
              <p>12 V(pagos) / 5 X(cancelados) / 8 O(pendientes)</p>*/ }
         
 
-              <Link to='/'><button 
+              <Link to='/'>
+              <button 
                     className='flex justify-center items-center w-full bg-black border border-gray-800 pb-3'>
                     
                     <span className='font-normal  text-white pt-[10px]'>Seguir viendo</span>
