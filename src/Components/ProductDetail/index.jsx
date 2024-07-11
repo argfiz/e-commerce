@@ -14,7 +14,7 @@ const ProductDetail = () => {
     return (
         
         <aside 
-            className={`${isProductDetailOpen ? 'flex  fixed left-0  flex-col  w-[375px] h-[calc(100vh-43px)] p-2 pt-0 border bg-white/80' : 'hidden'} `}>
+            className={`${isProductDetailOpen ? 'flex  fixed left-0  flex-col  w-[375px] h-[calc(100vh-43px)] p-1.5 pt-0 border bg-white/80' : 'hidden'} `}>
             <div className='flex relative justify-center items-center p-2'>
                 
                 <h2 className='font-bold text-lg'>Product Details</h2>
@@ -38,14 +38,14 @@ const ProductDetail = () => {
                 </p>
             </div>
 
-            <div>
-                <button className='flex justify-center items-center w-full bg-black pb-3'>
-                    <PlusCircleIcon className='size-6 text-white mt-3'></PlusCircleIcon>
+            <div className='w-full'>
+                <button className='flex justify-center items-center w-full bg-black py-1.5'>
+                    <PlusCircleIcon className='size-7 text-white '></PlusCircleIcon>
                 </button> 
                 <button 
-                    className='flex justify-center items-center w-full bg-white border border-blue-500 pb-3'
+                    className='flex justify-center items-center w-full bg-white border border-black p-2'
                     onClick={() => toggleProductDetail()}>
-                    <span className='font-normal text-blue-500 pt-[10px]'>Seguir viendo</span>
+                    <span className='font-normal text-blue-500'>Seguir viendo</span>
                 </button>
             </div>
                

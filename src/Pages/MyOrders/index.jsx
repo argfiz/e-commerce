@@ -9,7 +9,7 @@ function MyOrders() {
 
     return (
       <>
-    <div className='flex flex-col p-2 pt-0 w-96 h-[calc(100vh-44px)] bg-blue-500'>
+    <div className='flex flex-col p-1.5 pt-0 w-[375px] h-[calc(100vh-44px)] bg-blue-500'>
       
       <div className='flex justify-start items-center'>
         <h1 className='text-white p-2 font-bold text-lg  text-center'>My Orders:</h1>
@@ -41,5 +41,5 @@ function MyOrders() {
     )
   }
   
-  export default MyOrders
+  export {MyOrders}
   

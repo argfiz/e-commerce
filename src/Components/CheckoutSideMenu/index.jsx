@@ -40,9 +40,9 @@ const CheckoutSideMenu = () => {
         toggleCheckoutSideMenu()
         setSearchByTitle(null)
     }
-   
+
     return (
-        <aside className={`${isCheckoutSideMenuOpen ? 'flex' : 'hidden'} flex-col fixed right-0 w-[375px] h-[calc(100vh-43px)] p-2 pt-0 border bg-white/80 shadow-inner`}>
+        <aside className={`${isCheckoutSideMenuOpen ? 'flex' : 'hidden'} flex-col fixed right-0 w-[375px] h-[calc(100vh-43px)] p-1.5 pt-0 border bg-white/80 shadow-inner`}>
 
 
 
@@ -55,7 +55,7 @@ const CheckoutSideMenu = () => {
                 </div>
 
                 <div className=''>
-                    <h2 className='font-bold text-lg'>My Cart<span className='font-bold text-blue-500 text-xl pl-3 underline underline-offset-4'>${totalPrice(cartProducts)}</span></h2>
+                    <h2 className='font-bold text-lg'>My Cart</h2>
 
 
                 </div>
@@ -64,13 +64,18 @@ const CheckoutSideMenu = () => {
 
 
 
-            <div className='p-6 flex-1  overflow-y-scroll bg-white border border-blue-500 rounded-sm shadow-2xl'>
+            <div className='p-6 flex-1  overflow-y-scroll bg-white border border-blue-500 rounded-sm shadow-lg'>
                 <OrderCard />
             </div>
+
+            <div className='p-2 text-center'>
+               <span className='font-bold text-blue-500 text-xl'>$</span><span className='  font-bold text-blue-500 text-xl  underline underline-offset-4'>{totalPrice(cartProducts)}</span>
+            </div>
+
             <div >
                 <Link to='/my-orders/last'>
                     <button
-                        className='flex justify-center items-center w-full bg-black pb-3'
+                        className='flex justify-center items-center w-full bg-black pb-2'
                         onClick={() => handleCheckout()}>
                         <ShoppingCartIcon
                             className='size-6 text-white cursor-pointer mt-3' />
@@ -78,9 +83,9 @@ const CheckoutSideMenu = () => {
                     </button>
                 </Link>
                 <button
-                    className='flex justify-center items-center w-full bg-white border border-blue-500 pb-3'
+                    className='flex justify-center items-center w-full bg-white border border-black p-2'
                     onClick={() => toggleCheckoutSideMenu()}>
-                    <span className='font-normal text-blue-500 pt-[10px]'>Seguir viendo</span>
+                    <span className='font-normal text-blue-500'>Seguir viendo</span>
                 </button>
             </div>
         </aside>

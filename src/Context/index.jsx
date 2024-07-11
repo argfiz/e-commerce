@@ -1,16 +1,39 @@
 import { createContext, useState, useEffect } from 'react'
 import { PropTypes } from 'prop-types'
 import { getAllProducts } from '../api'
+//import { useLocalStorage } from './useLocalStorage'
 
 
 export const ShoppingCartContext = createContext()
 
 export const ShoppingCartProvider = ({ children }) => {
 
-    //Shopping Cart Increment quantity
+
+
+    // My Account
+    const [account, setAccount] = useState({})
+    // Sign out
+    const [signOut, setSignOut] = useState(false)
+    // Custom Hook local storage
+   /* const {
+            parsedAccount : account1, 
+             parsedSignOut : signOut1 
+            } = useLocalStorage('account' , {})
+    const {
+        parsedAccount : account2,  
+        parsedSignOut : signOut2,
+    } = useLocalStorage('sign-out' , {})*/
+                   
+
+
+
+
+
+
+    // Shopping Cart Increment quantity
     const [count, setCount] = useState(0)
 
-    /**///Product Detail Open/Close
+    /**/// Product Detail Open/Close
     const [isProductDetailOpen, setIsProductDetail] = useState(false)
     const toggleProductDetail = () => setIsProductDetail(!isProductDetailOpen)
     /**/
@@ -44,9 +67,9 @@ export const ShoppingCartProvider = ({ children }) => {
     /**///Get products
     const [items, setItems] = useState(null)
     const [filteredItems, setFilteredItems] = useState(null)
-    
+
     //console.log('FilteredItems: ', filteredItems)
-   
+
     /**/
     //Get products by title
     const [searchByTitle, setSearchByTitle] = useState(null)
@@ -54,8 +77,8 @@ export const ShoppingCartProvider = ({ children }) => {
     //Get products by category
     const [searchByCategory, setSearchByCategory] = useState(null)
     //console.log('searchByCategory :', searchByCategory) 
-    
-    
+
+
     const filteredItemsByTitle = (items, searchByTitle) => {
         return items?.filter(item =>
             item.title.toLowerCase().includes(searchByTitle.toLowerCase()))
@@ -65,7 +88,7 @@ export const ShoppingCartProvider = ({ children }) => {
         return items?.filter(item =>
             item.category.toLowerCase().includes(searchByCategory.toLowerCase()))
     }
-    
+
 
     /**///Get product filtered by title or category
     useEffect(() => {
@@ -80,8 +103,8 @@ export const ShoppingCartProvider = ({ children }) => {
     }, [items, searchByTitle, searchByCategory])
     ///**/
 
-    
-    
+
+
     useEffect(() => {
         async function fetchData() {
             try {
@@ -119,7 +142,11 @@ export const ShoppingCartProvider = ({ children }) => {
             filteredItems,
             setFilteredItems,
             searchByCategory,
-            setSearchByCategory
+            setSearchByCategory,
+            account,
+            setAccount,
+            signOut,
+            setSignOut
         }}>
             {children}
         </ShoppingCartContext.Provider>

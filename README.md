@@ -12,8 +12,8 @@ Tailwind CSS: para estilizar los componentes y lograr un diseño atractivo.
 Heroicons: para los íconos en la barra de navegación demas componentes.
 Context API: para administrar el estado global, como el carrito de compras.
 Responsive: Adaptibilidad según el dispositivo
-LocalStorage: en proceso.
-CustomHook: en proceso.
+LocalStorage: Para ayudar mantener persistencia en los datos.
+CustomHook: en desarrollo
 
 
 BACKEND: en desarrollo
