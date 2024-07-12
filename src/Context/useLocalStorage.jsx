@@ -1,15 +1,13 @@
-import { useEffect, useContext } from 'react';
+import { useContext } from 'react';
 import { ShoppingCartContext } from '../../Context'
 
 
 
 const useLocalStorage = () => {
 
-    const {setAccount, setSignOut} = useContext(ShoppingCartContext)
+    const { setAccount, setSignOut } = useContext(ShoppingCartContext)
 
-    useEffect(() => {
-        setTimeout(() => {
-
+    
             const accountInLocalStorage = localStorage.getItem('account')
             const signOutInLocalStorage = localStorage.getItem('sign-out')
             let parsedAccount
@@ -20,7 +18,7 @@ const useLocalStorage = () => {
                 parsedAccount = {}
             } else {
                 parsedAccount = JSON.parse(accountInLocalStorage)
-                setAccount(parsedAccount) 
+                setAccount(parsedAccount)
             }
 
             if (!signOutInLocalStorage) {
@@ -28,16 +26,15 @@ const useLocalStorage = () => {
                 parsedSignOut = false
             } else {
                 parsedSignOut = JSON.parse(signOutInLocalStorage)
-                setSignOut(parsedSignOut) 
+                setSignOut(parsedSignOut)
             }
-
+            
             return {
                 parsedAccount,
-                parsedSignOut 
+                parsedSignOut
             }
 
-        }, 2000)
-    })  
+    
 }
 
 export { useLocalStorage }

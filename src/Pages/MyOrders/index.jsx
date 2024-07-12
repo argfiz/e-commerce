@@ -28,7 +28,7 @@ function MyOrders() {
 
               <Link to='/'>
               <button 
-                    className='flex justify-center items-center w-full bg-black border border-gray-800 pb-3'>
+                    className='flex justify-center items-center w-full bg-black border border-gray-500 pb-3 rounded-sm'>
                     
                     <span className='font-normal  text-white pt-[10px]'>Seguir viendo</span>
                 </button>  

@@ -11,19 +11,19 @@ export const ShoppingCartProvider = ({ children }) => {
 
 
     // My Account
-    const [account, setAccount] = useState({})
+    //const [account, setAccount] = useState()
+    const [account, setAccount] = useState(() => {
+        const accountInLocalStorage = localStorage.getItem('account')
+        return accountInLocalStorage ? JSON.parse(accountInLocalStorage) : null
+    })
     // Sign out
-    const [signOut, setSignOut] = useState(false)
-    // Custom Hook local storage
-   /* const {
-            parsedAccount : account1, 
-             parsedSignOut : signOut1 
-            } = useLocalStorage('account' , {})
-    const {
-        parsedAccount : account2,  
-        parsedSignOut : signOut2,
-    } = useLocalStorage('sign-out' , {})*/
-                   
+    const [signOut, setSignOut] = useState(() => {
+        const signOutInLocalStorage = localStorage.getItem('sign-out')
+        return signOutInLocalStorage ? JSON.parse(signOutInLocalStorage) : false
+    })
+    //console.log('account:  ', account)
+    //console.log('signOut:  ', signOut)
+
 
 
 
