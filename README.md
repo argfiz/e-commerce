@@ -9,19 +9,26 @@ Shopi es una plataforma de comercio electrónico que ofrece una amplia variedad 
 ## Tecnologías y Herramientas
 
 ### FRONTEND:
-- React: como mi marco de desarrollo para crear una interfaz de usuario moderna y receptiva.
-- React Router: para la navegación entre páginas.
-- Tailwind CSS: para estilizar los componentes y lograr un diseño atractivo.
-- Heroicons: para los íconos en la barra de navegación demas componentes.
-- Context API: para administrar el estado global, como el carrito de compras.
-- Responsive: Adaptibilidad según el dispositivo
-- LocalStorage: Para ayudar mantener persistencia en los datos.
-- CustomHook: en desarrollo
+- **React:** como mi marco de desarrollo para crear una interfaz de usuario moderna y receptiva.
+
+- **React Router:** para la navegación entre páginas.
+
+- **Tailwind CSS:** para estilizar los componentes y lograr un diseño atractivo.
+
+- **Heroicons:** para los íconos en la barra de navegación demas componentes.
+
+- **Context API:** para administrar el estado global, como el carrito de compras.
+
+- **Responsive:** Adaptibilidad según el dispositivo
+
+- **LocalStorage:** Para ayudar mantener persistencia en los datos.
+
+- **CustomHook:** en desarrollo
 
 
 ### BACKEND:
 
-- **Tecnologías Utilizadas:** Express.js - Joi - Boom - Docker - pg - eslint y eslint-config-prettier - Faker - Cors - Dotenv
+- **Tecnologías Utilizadas:** Express.js - Joi - Boom - Docker - pg - eslint y eslint-config-prettier - Faker - Cors - Dotenv - Sequelize
 
 - **Express.js:** Framework de Node.js utilizado para construir el servidor y manejar las rutas.
 
@@ -42,6 +49,8 @@ Shopi es una plataforma de comercio electrónico que ofrece una amplia variedad 
 - **dotenv**:** Utilizado para manejar variables de entorno de manera segura y conveniente.
 
 - **cors:** Middleware para habilitar CORS (Cross-Origin Resource Sharing), permitiendo que la API sea accesible desde diferentes dominios.
+
+- **ORM con Sequelize:** Planificación del uso de Sequelize como ORM para gestionar las interacciones con la base de datos de manera más eficiente y organizada, ademas de aplicar migraciones.
 
 - **Git:** Utilizo Git para el control de versiones y alojo nuestro repositorio en GitHub.
 
