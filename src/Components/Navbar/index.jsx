@@ -2,7 +2,6 @@ import { ShoppingBagIcon, HomeIcon } from '@heroicons/react/24/solid'
 import { NavLink } from 'react-router-dom'
 import { useContext } from 'react'
 import { ShoppingCartContext } from '../../Context'
-
 const Navbar = () => {
 
     const {
@@ -70,7 +69,7 @@ const handleSignOut = () => {
         {
             to: '/clothing',
             text: 'Clothing',
-            className: 'text-white font-semibold text-md',
+            className: 'text-white font-semibold text-md hidden md:block',
             active: true,
             onClick: () => {
                 setSearchByCategory('clothing')
@@ -80,7 +79,7 @@ const handleSignOut = () => {
         {
             to: '/electronics',
             text: 'Electronics',
-            className: 'text-white font-semibold text-md',
+            className: 'text-white font-semibold text-md hidden md:block',
             active: true,
             onClick: () => {
                 setSearchByCategory('electronics')
@@ -90,7 +89,7 @@ const handleSignOut = () => {
         {
             to: '/jewelery',
             text: 'Jewelery',
-            className: 'text-white font-semibold text-md',
+            className: 'text-white font-semibold text-md hidden md:block',
             active: true,
             onClick: () => {
                 setSearchByCategory('jewelery')
@@ -100,13 +99,13 @@ const handleSignOut = () => {
 
     ]
     let navRight = [
-        { to: '', text: account ? account.email : '', className: 'text-white text-sm', active: false },
-        { to: '/my-account', text: 'My Account', className: 'text-white font-semibold text-md', active: true },
-        { to: '/my-orders', text: 'My Orders', className: 'text-white font-semibold text-md', active: true },
+        { to: '', text: account ? account.email : '', className: 'text-white text-sm hidden md:block', active: false },
+        { to: '/my-account', text: 'My Account', className: 'text-white font-semibold text-md hidden md:block', active: true },
+        { to: '/my-orders', text: 'My Orders', className: 'text-white font-semibold text-md hidden md:block', active: true },
         {
             to: '/sign-in',
             text: !isUserSignOut ? 'Sign In' : 'Sign Out',
-            className: 'text-white font-semibold text-md',
+            className: 'text-white font-semibold text-md hidden md:block',
             active: true,
             onClick: () => handleSignOut()
         },
@@ -129,7 +128,7 @@ const handleSignOut = () => {
                 </div>
             ),
 
-        }
+        },
     ]
 
     const renderMenuItem = (item) => (
@@ -177,7 +176,7 @@ console.log()
     return (
         <nav className='flex justify-between items-center fixed z-10 top-0 w-full py-2 px-20 text-sm font-light flex-wrap bg-black/80'>
 
-            <ul className='flex gap-3 items-center flex-wrap '>
+            <ul className='flex gap-3 items-center flex-wrap'>
                 {navLeft.map(item => (renderMenuItem(item)))}
             </ul>
 
