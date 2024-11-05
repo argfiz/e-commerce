@@ -99,8 +99,8 @@ const handleSignOut = () => {
 
     ]
     let navRight = [
-        { to: '', text: account ? account.email : '', className: 'text-white text-sm hidden md:block', active: false },
-        { to: '/my-account', text: 'My Account', className: 'text-white font-semibold text-md hidden md:block', active: true },
+        { to: '', text: account ? account.email : '', className: 'text-white text-sm', active: false },
+        { to: '/my-account', text: 'My Account', className: 'text-white font-semibold text-md', active: true },
         { to: '/my-orders', text: 'My Orders', className: 'text-white font-semibold text-md hidden md:block', active: true },
         {
             to: '/sign-in',
