@@ -2,7 +2,7 @@
 Echo con mucho entusiasmo por su autor , actualmente trabajando en su optimizacion aplicando buenas practicas, y ademas, en una mejor experiencia para el UI (User Interface)
 
 ## DESCRIPCION: 
-Shopi es una plataforma de comercio electrónico que ofrece una amplia variedad de productos, desde ropa y electrónica hasta muebles y juguetes. Nuestro objetivo es proporcionar una experiencia de compra fácil, segura y conveniente para nuestros clientes.
+e-Box es una plataforma de comercio electrónico que ofrece una amplia variedad de productos, desde ropa y electrónica hasta muebles y juguetes. Nuestro objetivo es proporcionar una experiencia de compra fácil, segura y conveniente para nuestros clientes.
 
 ![Preview e-commerce](./public/preview-ecommerce.png)
 
